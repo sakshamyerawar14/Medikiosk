@@ -1,0 +1,183 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: "class",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // MediKiosk Design System
+        navy: {
+          DEFAULT: "#0F172A",
+          50: "#E8EAF0",
+          100: "#C5CAD7",
+          200: "#9FA9BA",
+          300: "#79879C",
+          400: "#5B6980",
+          500: "#3D4B63",
+          600: "#2D3A52",
+          700: "#1E2840",
+          800: "#0F172A",
+          900: "#080F1C",
+        },
+        slate: {
+          DEFAULT: "#64748B",
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E293B",
+          900: "#0F172A",
+        },
+        sage: {
+          DEFAULT: "#059669",
+          50: "#ECFDF5",
+          100: "#D1FAE5",
+          200: "#A7F3D0",
+          300: "#6EE7B7",
+          400: "#34D399",
+          500: "#10B981",
+          600: "#059669",
+          700: "#047857",
+          800: "#065F46",
+          900: "#064E3B",
+        },
+        background: "#F8FAFC",
+        surface: "#FFFFFF",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // Semantic status colors
+        success: "#22C55E",
+        warning: "#EAB308",
+        error: "#EF4444",
+        info: "#0EA5E9",
+        urgent: "#DC2626",
+      },
+      fontFamily: {
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        heading: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        mono: ["Fira Code", "monospace"],
+      },
+      fontSize: {
+        display: ["40px", { lineHeight: "1.2", fontWeight: "700" }],
+        h1: ["32px", { lineHeight: "1.25", fontWeight: "700" }],
+        h2: ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+        h3: ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+        h4: ["16px", { lineHeight: "1.5", fontWeight: "500" }],
+        "body-lg": ["18px", { lineHeight: "1.6" }],
+        body: ["16px", { lineHeight: "1.6" }],
+        "body-sm": ["14px", { lineHeight: "1.5" }],
+        caption: ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+      },
+      spacing: {
+        "4.5": "18px",
+        "13": "52px",
+        "15": "60px",
+        "18": "72px",
+        "22": "88px",
+        "26": "104px",
+        "30": "120px",
+      },
+      borderRadius: {
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        full: "9999px",
+      },
+      boxShadow: {
+        sm: "0 1px 3px rgba(15, 23, 42, 0.03)",
+        DEFAULT: "0 2px 6px rgba(15, 23, 42, 0.05)",
+        md: "0 4px 16px rgba(15, 23, 42, 0.07)",
+        lg: "0 8px 32px rgba(15, 23, 42, 0.10)",
+        xl: "0 16px 48px rgba(15, 23, 42, 0.12)",
+        inner: "inset 0 2px 4px rgba(15, 23, 42, 0.05)",
+      },
+      animation: {
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "spin-slow": "spin 3s linear infinite",
+        "bounce-gentle": "bounce 2s infinite",
+        "fade-in": "fadeIn 0.3s ease-out",
+        "slide-up": "slideUp 0.3s ease-out",
+        "slide-in": "slideIn 0.3s ease-out",
+        "scale-in": "scaleIn 0.2s ease-out",
+        "mic-pulse": "micPulse 1.5s ease-in-out infinite",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideIn: {
+          "0%": { opacity: "0", transform: "translateX(-16px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        scaleIn: {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        micPulse: {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.15)", opacity: "0.8" },
+        },
+      },
+      screens: {
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        kiosk: "1024px",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
